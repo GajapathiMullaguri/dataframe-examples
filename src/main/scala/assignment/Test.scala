@@ -26,8 +26,8 @@ object Test {
     timingDf
       .select($"business_id", $"hours.Friday".as("Friday"), $"hours.Monday".as("Monday"))
       .groupBy($"business_id")
-      .pivot()
-      .show()
+      .pivot("business_id")
+    //  .show()
 
     // Next you are asked to identify the number of businesses in the state of Wisconsin
     //    with greater than 20 reviews.

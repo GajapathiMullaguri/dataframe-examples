@@ -56,7 +56,7 @@ object FinanceDataAnalysis {
     .show(false)
 
     val compDf = spark.read
-      .json("s3n://" + Constants.S3_BUCKET + "/company.json")
+      .json(s"s3n://${s3Config.getString("s3_bucket")}/company.json")
     compDf.show(false)
     compDf.printSchema()
 
